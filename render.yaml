@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: descubre-ate-backend
+    env: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
