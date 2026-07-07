@@ -1,0 +1,9 @@
+# Nunca subir las credenciales reales
+.env
+
+# Dependencias si se usan en el futuro
+/vendor/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

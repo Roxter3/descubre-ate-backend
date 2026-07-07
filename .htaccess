@@ -1,0 +1,17 @@
+# ─────────────────────────────────────────────────────────
+# Reescritura de URLs — permite usar /categorias en vez de
+# /index.php?ruta=categorias
+#
+# Si esto no funciona en el servidor municipal (algunos
+# hostings restringen .htaccess), hay una alternativa
+# usando query strings que se explica más abajo.
+# ─────────────────────────────────────────────────────────
+
+RewriteEngine On
+
+# Si la petición es un archivo o carpeta real, se sirve tal cual
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Todo lo demás se redirige a index.php, pasando la ruta como parámetro
+RewriteRule ^(.*)$ index.php?ruta=$1 [QSA,L]
