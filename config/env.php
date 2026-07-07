@@ -42,4 +42,8 @@ function cargarEnv($rutaArchivo) {
     $yaCargado = true;
 }
 
-cargarEnv(__DIR__ . '/../.env');
+$archivoEnv = __DIR__ . '/../.env';
+
+if (file_exists($archivoEnv)) {
+    cargarEnv($archivoEnv);
+}
